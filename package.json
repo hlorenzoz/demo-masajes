@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240000.0",
+    "@fontsource-variable/cormorant": "^5.2.8",
+    "@fontsource-variable/hanken-grotesk": "^5.2.8",
     "@playwright/test": "^1.60.0",
     "@sveltejs/adapter-cloudflare": "^7.0.0",
     "@sveltejs/kit": "^2.0.0",

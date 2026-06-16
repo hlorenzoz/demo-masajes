@@ -3,9 +3,10 @@ export type ThemeName = 'light' | 'dark';
 const STORAGE_KEY = 'theme';
 
 function readInitial(): ThemeName {
-  if (typeof localStorage === 'undefined') return 'light';
+  // Default oscuro (lujo premium); el claro es opt-in explícito del usuario.
+  if (typeof localStorage === 'undefined') return 'dark';
   const saved = localStorage.getItem(STORAGE_KEY);
-  return saved === 'dark' ? 'dark' : 'light';
+  return saved === 'light' ? 'light' : 'dark';
 }
 
 class ThemeState {

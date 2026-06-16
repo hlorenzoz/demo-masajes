@@ -13,13 +13,18 @@
   }
 </script>
 
-<nav class="flex gap-2 text-sm" aria-label="Language">
-  {#each SUPPORTED_LANGS as lang (lang)}
+<nav class="flex items-center gap-1 text-xs tracking-wide" aria-label="Language">
+  {#each SUPPORTED_LANGS as lang, i (lang)}
+    {#if i > 0}
+      <span class="text-(--text-muted)/40" aria-hidden="true">·</span>
+    {/if}
     <a
       href={hrefFor(lang)}
       hreflang={lang}
       aria-current={lang === i18n.lang ? 'true' : undefined}
-      class="uppercase {lang === i18n.lang ? 'font-bold text-sage-700 dark:text-sage-200' : 'text-ink-700/60'}"
+      class="rounded px-1 py-0.5 uppercase transition-colors duration-200 {lang === i18n.lang
+        ? 'font-semibold text-(--brand)'
+        : 'text-(--text-muted) hover:text-(--text-base)'}"
     >
       {lang}
     </a>

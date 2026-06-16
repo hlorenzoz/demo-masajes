@@ -19,8 +19,12 @@ export async function sendContactEmail(
     from: FROM,
     to: TO,
     replyTo: input.email,
-    subject: `Nuevo contacto: ${input.name}`,
-    text: `De: ${input.name} <${input.email}>\n\n${input.message}`
+    subject: `Nueva solicitud de reserva: ${input.name}`,
+    text:
+      `De: ${input.name} <${input.email}>\n\n` +
+      `Tratamiento: ${input.service}\n` +
+      `Duración: ${input.duration} minutos\n\n` +
+      `Mensaje:\n${input.message || 'Sin mensaje adicional.'}`
   });
 
   return { ok: error === null };

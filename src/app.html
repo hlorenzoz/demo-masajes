@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="%lang%" data-theme="light">
+<html lang="%lang%" data-theme="dark">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#181410" media="(prefers-color-scheme: dark)" />
     <script>
       // Anti-flash: aplica el tema guardado antes de la primera pintura.
+      // Default = oscuro (lujo premium); el claro es opt-in explícito.
       try {
         const saved = localStorage.getItem('theme');
-        if (saved === 'light' || saved === 'dark') {
-          document.documentElement.dataset.theme = saved;
-        }
+        document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
       } catch {}
     </script>
     %sveltekit.head%

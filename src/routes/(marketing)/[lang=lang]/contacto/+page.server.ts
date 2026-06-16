@@ -11,9 +11,7 @@ export const actions = {
       return fail(500, { message: 'Platform unavailable' });
     }
 
-    const parsed = contactSchema.safeParse(
-      Object.fromEntries(await request.formData())
-    );
+    const parsed = contactSchema.safeParse(Object.fromEntries(await request.formData()));
     if (!parsed.success) {
       return fail(400, { message: 'invalid', issues: parsed.error.flatten() });
     }
