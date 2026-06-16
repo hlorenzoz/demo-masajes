@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+/* Modo oscuro controlado por atributo data-theme (no por media-query),
+   porque el tema lo decide el usuario vía la Rune de estado. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme {
+  /* — Verde sage: núcleo zen relajante — */
+  --color-sage-50: #f2f6f1;
+  --color-sage-100: #e3ecdf;
+  --color-sage-200: #c7d9bf;
+  --color-sage-300: #a5c098;
+  --color-sage-400: #84a673;
+  --color-sage-500: #6b8f5a; /* primario */
+  --color-sage-600: #547347;
+  --color-sage-700: #425a39;
+  --color-sage-800: #36482f;
+  --color-sage-900: #2c3b28;
+
+  /* — Oro / champagne: acento de lujo — */
+  --color-gold-200: #efe4c4;
+  --color-gold-300: #e2d2a8;
+  --color-gold-400: #d4bd86;
+  --color-gold-500: #c0a062;
+
+  /* — Neutros cálidos — */
+  --color-cream-50: #faf8f4;
+  --color-cream-100: #f3efe7;
+  --color-cream-200: #e8e1d4;
+  --color-ink-700: #3a3a36;
+  --color-ink-900: #21211e;
+
+  /* — Tipografía & radios zen — */
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif; /* toque lujo en titulares */
+  --radius-zen: 1rem;
+}
+
+/* Tokens semánticos que invierten en oscuro */
+:root {
+  --bg-base: var(--color-cream-50);
+  --bg-surface: #ffffff;
+  --text-base: var(--color-ink-900);
+  --text-muted: var(--color-ink-700);
+  --brand: var(--color-sage-500);
+  --accent: var(--color-gold-500);
+}
+
+[data-theme='dark'] {
+  --bg-base: var(--color-sage-900);
+  --bg-surface: #2c3b28;
+  --text-base: var(--color-cream-50);
+  --text-muted: var(--color-sage-200);
+  --brand: var(--color-sage-300);
+  --accent: var(--color-gold-400);
+}
+
+@layer base {
+  html {
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-base);
+    font-family: var(--font-sans);
+  }
+}
