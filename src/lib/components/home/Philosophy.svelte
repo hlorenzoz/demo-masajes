@@ -45,10 +45,18 @@
         />
       </div>
 
-      <!-- Anillo decorativo dorado flotante -->
+      <!-- Imagen secundaria circular inferior izquierda -->
       <div
-        class="absolute -left-6 bottom-4 w-16 h-16 rounded-full border border-(--accent)/30 z-0 animate-pulse"
-      ></div>
+        class="absolute -left-6 bottom-4 w-28 h-28 sm:w-36 sm:h-36 rounded-full border border-(--accent) overflow-hidden shadow-lift bg-(--bg-elevated) z-20 transition-transform duration-500 hover:scale-105"
+      >
+        <Image
+          src="/images/relajante.webp"
+          alt={i18n.lang === 'es' ? 'Masaje relajante' : 'Relaxing massage'}
+          width={300}
+          height={300}
+          class="h-full w-full object-cover"
+        />
+      </div>
     </div>
 
     <!-- Bloque de contenido a la derecha -->
