@@ -1,7 +1,7 @@
 import type { Dictionary, Lang } from '$lib/i18n/types';
 
 export const SITE_NAME = 'Demo Massage';
-export const SITE_URL = 'https://demomassage.co.uk';
+export const SITE_URL = 'https://demo-massages.hlorenzoz.com';
 
 export interface MetaInput {
   lang: Lang;
